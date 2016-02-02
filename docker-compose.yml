@@ -1,0 +1,14 @@
+app:
+  build: .
+#  env_file: .app.env
+  links:
+   - db
+   - db:database
+  ports:
+    - "80:80"
+db:
+  image: mongo
+  ports:
+     - 27017:27017
+  tty: true
+  
